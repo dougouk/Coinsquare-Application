@@ -1,7 +1,6 @@
 package com.dan190.coinsquare_application.reddit
 
 import android.os.Bundle
-import android.view.View
 import com.dan190.coinsquare_application.R
 import com.dan190.coinsquare_application.mvp.BaseMvpActivity
 import io.reactivex.Observable

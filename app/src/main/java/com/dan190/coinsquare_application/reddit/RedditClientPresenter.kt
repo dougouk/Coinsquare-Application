@@ -24,10 +24,17 @@ class RedditClientPresenter : BaseMvpPresenterImpl<RedditClientContract.View>(),
                 .toList()
                 .map { list: MutableList<String>? -> Timber.d(list?.toString()); list }
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { list: MutableList<String>?, throwable: Throwable? ->
-                    if (list != null) view?.showTitles(list.toList())
-                    view?.hideLoading()
-                }
+                .subscribe (
+                        { list: MutableList<String>? ->
+                            if (list != null) view?.showTitles(list.toList())
+                            view?.hideLoading()
+                        },
+                        {
+                            throwable: Throwable? ->
+                            view?.showError(throwable?.toString()!!)
+                            view?.hideLoading()
+                        }
+                )
     }
 
 }
