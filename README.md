@@ -1,6 +1,8 @@
 # Coinsqure Android Developer Application
 Simple Reddit client that pulls data from https://www.reddit.com/.json and displays the list of titles
 
+![Alt Text](demo.gif)
+
 Time it took: **1 hour 13 minutes**
 
 Prioritized **clean architecture** over UI fanciness
